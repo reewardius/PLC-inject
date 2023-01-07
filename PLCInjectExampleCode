@@ -1,0 +1,41 @@
+# cat /home/reewardius/FB_100.mc7
+
+Organization Block (OB)
+------------------------------
+OB100
+
+Function Block (FB)
+------------------------------
+FB100
+  VAR_INPUT
+    StartButton : BOOL;
+    StopButton : BOOL;
+    SafetySensor : BOOL;
+    EmergencyStop : BOOL;
+  END_VAR
+  VAR_OUTPUT
+    Motor1 : BOOL;
+    Motor2 : BOOL;
+  END_VAR
+  IF (StartButton = 1) THEN
+    Motor1 = 1;
+    Motor2 = 1;
+  ELSE
+    Motor1 = 0;
+    Motor2 = 0;
+  END_IF
+  IF (StopButton = 1 OR SafetySensor = 1 OR EmergencyStop = 1) THEN
+    Motor1 = 0;
+    Motor2 = 0;
+  END_IF
+END_FB
+
+Ladder Logic Block (LDB)
+------------------------------
+LDB100
+  FC100(StartButton:=StartButton, StopButton:=StopButton, SafetySensor:=SafetySensor, EmergencyStop:=EmergencyStop, Motor1:=Motor1, Motor2:=Motor2);
+END_LDB
+
+> ls /home/reewardius/FB_100.mc7
+# FB_100.mc7 -> code above
+> plcinject -c 10.10.10.5 -p OB100 -b FB100 -f /home/reewardius/FB_100.mc7
