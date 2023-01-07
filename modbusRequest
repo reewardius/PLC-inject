@@ -1,0 +1,9 @@
+Transaction ID: 0x0000
+Protocol ID: 0x0000
+Length: 0x0006
+Unit ID: 0x01
+Function Code: 0x10 (Write Multiple Registers)
+Starting Address: 0x0000 (Register 0)
+Quantity of Registers: 0x0001 (1 register)
+Byte Count: 0x02 (2 bytes of data)
+Data: 0x0001 (Value of 1)
