@@ -1,0 +1,8 @@
+The values that you can change using Modbus requests to a Programmable Logic Controller (PLC) depend on the specific registers or coils that you are accessing and the specific function code being used in the request.
+Input registers are used to store data that is input to the PLC from external devices, such as sensors or switches. Output registers are used to store data that is output from the PLC to external devices, such as actuators or indicators. 
+Coils are used to represent boolean values (true or false) and are used for both input and output purposes.
+To change the values in the input registers or coils of a PLC, you would typically use a Modbus request with a function code that allows you to write to the registers or coils. 
+Examples of function codes that can be used for this purpose include "Write Single Coil" (function code 0x05), "Write Single Register" (function code 0x06), 
+and "Write Multiple Registers" (function code 0x10).
+To change the values in the output registers or coils of a PLC, you would typically use a Modbus request with a function code that allows you to read and write to the registers or coils. 
+Examples of function codes that can be used for this purpose include "Read/Write Multiple Registers" (function code 0x17) and "Read/Write Multiple Coils" (function code 0x15).
